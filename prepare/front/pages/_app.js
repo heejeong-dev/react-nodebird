@@ -20,5 +20,4 @@ const Nodebird = ({ Component }) => {
 Nodebird.propTypes = {
   Component: PropTypes.elementType.isRequired
 };
-
 export default Nodebird;

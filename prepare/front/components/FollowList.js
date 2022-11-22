@@ -4,8 +4,10 @@ import { List, Button, Card } from 'antd';
 import { StopOutlined } from '@ant-design/icons';
 
 const FollowList = ({ header, data }) => {
+  console.log(header, data);
+
   const style = useMemo(() => {
-    marginBottom: '20px';
+    return { marginBottom: '20px' }; //이렇게 해야댐
   }, []);
 
   return (
@@ -16,18 +18,18 @@ const FollowList = ({ header, data }) => {
       header={<div>{header}</div>}
       loadMore={
         <div style={{ textAlign: 'center', margin: '18px 8' }}>
-          <Button> More</Button>
+          <Button>More</Button>
         </div>
       }
       bordered
       dataSource={data}
-      renderItem={(item) => {
-        <List.Item style={{ marginTop: 20 }}>
+      renderItem={(item) => (
+        <List.Item style={{ marginTop: '20px' }}>
           <Card actions={[<StopOutlined key="stop" />]}>
             <Card.Meta description={item.nickname} />
           </Card>
-        </List.Item>;
-      }}
+        </List.Item>
+      )}
     />
   );
 };

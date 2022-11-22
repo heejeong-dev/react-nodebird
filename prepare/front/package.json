@@ -12,6 +12,7 @@
     "@ant-design/icons": "^4.8.0",
     "antd": "^4.24.3",
     "next": "^13.0.4",
+    "next-redux-wrapper": "^6.0.2",
     "prop-types": "^15.8.1",
     "styled-components": "^5.3.6"
   },
