@@ -1,15 +1,18 @@
 import React, { useState, useCallback, useMemo } from 'react';
 import Link from 'next/link';
 import { Form, Input, Button } from 'antd';
+import { useDispatch } from 'react-redux';
+import { LoginAction } from '../reducers';
 import styled from 'styled-components'; //FIXME: 이거안됨 -> 컴포넌트안에 넣어야함~
 
 // compn안에 들어가는 속성은 유즈 메모로 무조건 할것
 // const style = useMemo(() => ({ marginTop: 10 }), []);
 //r계속 마진 10이기때문에 다시그릴 이유가 없음)
 
-const LoginForm = ({ setIsLoggedIn }) => {
+const LoginForm = () => {
   const [id, setId] = useState('');
   const [password, setPassword] = useState('');
+  const dispatch = useDispatch();
   //아래 처럼 선언하면 디브 테그가 됨 + 스타일 먹은
 
   const onChangeId = useCallback((e) => {
@@ -22,7 +25,7 @@ const LoginForm = ({ setIsLoggedIn }) => {
 
   const onSubmitForm = useCallback(() => {
     console.log(id, password);
-    setIsLoggedIn(true);
+    dispatch(LoginAction({ id, password }));
   }, [id, password]);
 
   return (
