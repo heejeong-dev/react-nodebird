@@ -1,0 +1,27 @@
+{
+  "name": "react-nodebird-front",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next"
+  },
+  "author": "heejeong",
+  "license": "ISC",
+  "dependencies": {
+    "@ant-design/icons": "^4.8.0",
+    "antd": "^4.24.3",
+    "next": "^13.0.4",
+    "prop-types": "^15.8.1",
+    "styled-components": "^5.3.6"
+  },
+  "devDependencies": {
+    "eslint": "^8.28.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react": "^7.31.11",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "prettier": "^2.7.1"
+  }
+}
