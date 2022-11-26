@@ -2,7 +2,7 @@ import React, { useState, useCallback, useMemo } from 'react';
 import Link from 'next/link';
 import { Form, Input, Button } from 'antd';
 import { useDispatch } from 'react-redux';
-import { LoginAction } from '../reducers';
+import { LoginAction } from '../reducers/user';
 import styled from 'styled-components'; //FIXME: 이거안됨 -> 컴포넌트안에 넣어야함~
 
 // compn안에 들어가는 속성은 유즈 메모로 무조건 할것
