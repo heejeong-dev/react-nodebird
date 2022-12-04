@@ -11,6 +11,7 @@ import {
 } from '@ant-design/icons';
 import { useSelector } from 'react-redux';
 import CommentForm from './CommentForm';
+import PostCardContent from './PostContent';
 
 const PostCard = ({ post }) => {
   const { me } = useSelector((state) => state.user);
@@ -20,7 +21,8 @@ const PostCard = ({ post }) => {
 
   const onToggleLike = useCallback(() => {
     setLiked((prev) => !prev);
-  }, []);
+  }, [liked]);
+
   const onToggleComment = useCallback(() => {
     setCommentFormOpened((prev) => !prev);
   });
@@ -28,7 +30,7 @@ const PostCard = ({ post }) => {
   return (
     <div style={{ marginBottom: 20 }}>
       <Card
-        cover={post.Images && <PostImages imsges={post.Images} />}
+        cover={post.Images && <PostImages images={post.Images} />}
         actions={[
           <RetweetOutlined key="retweet" />,
           liked ? (
@@ -57,7 +59,7 @@ const PostCard = ({ post }) => {
         <Card.Meta
           avatar={<Avatar>{post.User.nickname[0]}</Avatar>}
           title={post.User.nickname}
-          description={post.content}
+          description=<PostCardContent postData={post.content} />
         />
       </Card>
       {commentFormOpened && (

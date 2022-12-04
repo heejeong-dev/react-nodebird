@@ -8,7 +8,7 @@ export const initialState = {
         nickname: 'aaa'
       },
       content: 'The first post #hashtag #express',
-      Image: [
+      Images: [
         { src: 'https://code.visualstudio.com/assets/images/home-intellisense.svg' },
         { src: 'https://code.visualstudio.com/assets/images/home-debug.svg' },
         { src: 'https://code.visualstudio.com/assets/images/home-git.svg' }

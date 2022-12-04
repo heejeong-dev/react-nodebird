@@ -10,16 +10,20 @@ const CommentForm = ({ post }) => {
   });
   const [commentText, onChangeCommentText] = useInput('');
 
-  const onSubmitComment = useCallback(() => {
-    console.log(post.id, commentText);
-  }, [commentText]);
-  // 댓글 달면 새로고침 되는거부터 다시
+  const onSubmitComment = useCallback(
+    (event) => {
+      event.preventDefault();
+      console.log(commentText);
+    },
+    [commentText]
+  );
+
   return (
-    <Form onFinish={onSubmitComment}>
+    <Form>
       <Form item>
-        <Input.TextArea value={commentText} onChange={onChangeCommentText} rows={4} />
-        <Button type="primary" htmlType="submit">
-          twittwit
+        <Input.TextArea rows={4} value={commentText} onChange={onChangeCommentText} />
+        <Button type="primary" htmlType="submit" onClick={onSubmitComment}>
+          twit
         </Button>
       </Form>
     </Form>

@@ -22,16 +22,16 @@ const AppLayout = ({ children }) => {
   return (
     <div>
       <Menu mode="horizontal">
-        <Menu.Item>
+        <Menu.Item key="home">
           <Link href="/">Home</Link>
         </Menu.Item>
-        <Menu.Item>
+        <Menu.Item key="profile">
           <Link href="/profile">profile</Link>
         </Menu.Item>
-        <Menu.Item>
+        <Menu.Item key="search">
           <SearchInput enterButton />
         </Menu.Item>
-        <Menu.Item>
+        <Menu.Item key="signup">
           <Link href="/signup">sign up</Link>
         </Menu.Item>
       </Menu>
@@ -51,8 +51,6 @@ const AppLayout = ({ children }) => {
     </div>
   );
 };
-
-//stylw ㄴ안에 객체넣으면 리렌더링할때 최적화 덜됨
 
 AppLayout.propTypes = {
   children: PropTypes.node.isRequired

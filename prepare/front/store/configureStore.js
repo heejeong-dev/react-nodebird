@@ -1,5 +1,6 @@
 import { createWrapper } from 'next-redux-wrapper';
 import { applyMiddleware, compose, createStore } from 'redux';
+import thunkMiddleware from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
 
 import reducer from '../reducers';
@@ -12,8 +13,18 @@ const changeNickname = (data) => {
   };
 };
 
+const loggerMiddleware =
+  ({ dispatch, getState }) =>
+  (next) =>
+  (action) => {
+    //여기서 하고싶은일 추가
+    console.log(action);
+    //
+    return next(action); //비동기로 하려던 액션 수행
+  };
+
 const configureStore = () => {
-  const middlewares = [];
+  const middlewares = [thunkMiddleware, loggerMiddleware];
   const enhancer =
     process.env.NODE_ENV === 'production'
       ? compose(applyMiddleware(...middlewares)) // 배포용일 때는 devtools 연결 X
